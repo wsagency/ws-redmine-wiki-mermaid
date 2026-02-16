@@ -4,11 +4,14 @@ Redmine::Plugin.register :redmine_wiki_mermaid do
   name 'Redmine Wiki Mermaid'
   author 'Web Solutions Ltd (ws.agency)'
   description 'Renders Mermaid diagrams in wiki pages and provides a live split-pane editor.'
-  version '1.0.0'
+  version '1.1.0'
   url 'https://github.com/wsagency/ws-redmine-wiki-mermaid'
   author_url 'https://ws.agency'
 
   requires_redmine version_or_higher: '5.0'
+
+  settings default: { 'enabled' => '1' },
+           partial: 'settings/wiki_mermaid_settings'
 end
 
 Rails.configuration.to_prepare do
